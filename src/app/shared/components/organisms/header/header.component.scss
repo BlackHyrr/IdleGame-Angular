@@ -1,0 +1,40 @@
+header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-gap: 25px;
+    margin-bottom: 25px;
+
+    .game-logo-container {
+        background: rgba(63, 74, 98, 0.95);
+        border: 2px solid #685C3C;
+    }
+
+    .top-bar {
+        position: relative;
+        width: 95%;
+        justify-self: flex-end;
+        padding: 25px;
+        background: rgba(28, 32, 35, 0.88);
+        border: 2px solid #685C3C;
+        display: flex;
+        justify-content: flex-end;
+
+        .player-portrait {
+            position: absolute;
+            left: -70px;
+            top: -18px;
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            background: rgba(28, 32, 35, 1);
+            border: 2px solid #685C3C;
+            overflow: hidden;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
