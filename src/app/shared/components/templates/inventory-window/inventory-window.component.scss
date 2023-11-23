@@ -1,0 +1,71 @@
+.inventory-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(63, 74, 98, 0.95);
+    border: 2px solid #685C3C;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 2fr;
+    padding: 25px;
+    height: 100%;
+    width: 100%;
+
+    .equipment {
+        position: relative;
+        background-color: #262626;
+        border: 2px solid #685C3C;
+        padding: 25px;
+    }
+
+    .inventory {
+        position: relative;
+        background-color: #262626;
+        border: 2px solid #685C3C;
+        padding: 70px 25px 25px 25px;
+    }
+
+    .inventory-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.window-title {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -30%);
+    background-color: #2c2c2c;
+    font-family: 'Crimson Text';
+    font-weight: 400;
+    font-size: 22px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #CAA782;
+    width: fit-content;
+
+    .inner-container {
+        min-width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 22px;
+        border-style: solid;
+        border-image-slice: 1;
+        border-width: 2px;
+        position: relative;
+        overflow: hidden;
+        border-image-source: radial-gradient(#fff, #6E5D4A);
+
+        p {
+            font-family: 'Crimson Text';
+            font-weight: 400;
+            font-size: 22px;
+            text-align: center;
+            color: #CAA782; 
+        }
+    }
+}

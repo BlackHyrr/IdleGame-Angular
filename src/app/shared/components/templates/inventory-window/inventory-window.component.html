@@ -1,0 +1,17 @@
+<div class="inventory-window" *ngIf="(windowStateService.openWindow$ | async) === 'inventory'">
+    <div class="equipment">
+        <app-window-title 
+        windowTitle="Equipment"
+        />
+    </div>
+    <div class="inventory">
+        <app-window-title 
+        windowTitle="Inventory"
+        />
+        <div class="inventory-grid">
+            <app-inventory-slot></app-inventory-slot>
+            <app-inventory-slot></app-inventory-slot>
+            <app-inventory-slot></app-inventory-slot>
+        </div>
+    </div>
+</div>
