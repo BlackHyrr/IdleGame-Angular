@@ -1,6 +1,8 @@
-tr {
+.player-resource {
     width: 100%;
-    td:first-child {
+    display: flex;
+    justify-content: space-between;
+    p:first-child {
         background: linear-gradient(180deg, #C89C5B 30%, #EAEAEA 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -10,11 +12,11 @@ tr {
         font-size: 1.1rem;
     }
 
-    td:last-child {
+    p:last-child {
         text-align: right;
     }
 
-    td {
+    p {
         padding: 4px 15px;
         font-weight: 600;
         font-size: 1.1rem;
@@ -22,19 +24,19 @@ tr {
 }
 
 #health-vital {
-    td:last-child {
+    p:last-child {
         color: #BB1A1A;
     }
 }
 
 #mana-vital {
-    td:last-child {
+    p:last-child {
         color: #2898FF;
     }
 }
 
 #stamina-vital {
-    td:last-child {
+    p:last-child {
         color: #19902B;
     }
 }
