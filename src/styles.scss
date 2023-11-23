@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "Crimson Text";
+    src: url('./assets/fonts/CrimsonText-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Crimson Text";
+    src: url('./assets/fonts/CrimsonText-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Crimson Text";
+    src: url('./assets/fonts/CrimsonText-Bold.ttf');
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(./assets/images/main-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
