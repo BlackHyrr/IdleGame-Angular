@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-mainmenu-button',
@@ -10,6 +10,11 @@ export class MainMenuButtonComponent {
   @Input() customStyle: { [key: string]: string } = {};
   @Input() buttonType: string = '';
   @Output() buttonClick = new EventEmitter<string>();
+  @Input() width: string = 'fit-content';
+
+  @HostBinding('style.width') get getWidth() {
+    return this.width;
+  }
 
   handleButtonClick():void {
     this.buttonClick.emit(this.buttonType);
