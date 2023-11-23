@@ -9,9 +9,9 @@
         windowTitle="Inventory"
         />
         <div class="inventory-grid">
-            <app-inventory-slot></app-inventory-slot>
-            <app-inventory-slot></app-inventory-slot>
-            <app-inventory-slot></app-inventory-slot>
+            <app-inventory-slot
+            *ngFor="let inventorySlot of inventorySlots"
+             />
         </div>
     </div>
 </div>
