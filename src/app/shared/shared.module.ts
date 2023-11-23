@@ -12,6 +12,14 @@ import { MainMenuComponent } from './components/molecules/main-menu/main-menu.co
 import { MainWindowComponent } from './components/templates/main-window/main-window.component';
 import { InventorySlotComponent } from './components/atoms/inventory-slot/inventory-slot.component';
 import { CharacterCreationComponent } from './components/templates/character-creation/character-creation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToggleVisibilityDirective } from './directives/toggle-visibility.directive';
+import { InventoryWindowComponent } from './components/templates/inventory-window/inventory-window.component';
+import { SkillWindowComponent } from './components/templates/skill-window/skill-window.component';
+import { WorldWindowComponent } from './components/templates/world-window/world-window.component';
+import { RegionWindowComponent } from './components/templates/region-window/region-window.component';
+import { CharacterWindowComponent } from './components/templates/character-window/character-window.component';
+import { WindowTitleComponent } from './components/atoms/window-title/window-title.component';
 
 
 
@@ -28,10 +36,18 @@ import { CharacterCreationComponent } from './components/templates/character-cre
     MainMenuComponent,
     MainWindowComponent,
     InventorySlotComponent,
-    CharacterCreationComponent
+    CharacterCreationComponent,
+    ToggleVisibilityDirective,
+    InventoryWindowComponent,
+    SkillWindowComponent,
+    WorldWindowComponent,
+    RegionWindowComponent,
+    CharacterWindowComponent,
+    WindowTitleComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     MainMenuButtonComponent,
@@ -44,7 +60,13 @@ import { CharacterCreationComponent } from './components/templates/character-cre
     MainMenuComponent,
     MainWindowComponent,
     InventorySlotComponent,
-    CharacterCreationComponent
+    CharacterCreationComponent,
+    InventoryWindowComponent,
+    SkillWindowComponent,
+    WorldWindowComponent,
+    RegionWindowComponent,
+    CharacterWindowComponent,
+    WindowTitleComponent
   ]
 })
 export class SharedModule { }
