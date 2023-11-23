@@ -1,0 +1,13 @@
+.inventory-slot {
+    width: 60px;
+    height: 60px;
+    flex-basis: auto;
+    margin: 3px;
+    background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(217, 217, 217, 0.22) 0%, rgba(217, 217, 217, 0) 100%);
+    border-style: solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    position: relative;
+    overflow: hidden;
+    border-image-source: linear-gradient(90deg, #6E5D4A 0%, rgb(169, 169, 169, 0.35) 100%);  
+}
