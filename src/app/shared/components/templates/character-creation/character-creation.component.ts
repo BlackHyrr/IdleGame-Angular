@@ -67,8 +67,6 @@ export class CharacterCreationComponent implements OnInit{
 
       const player = new Player(playerData);
       this.playerService.setPlayer(player);
-      console.log(player);
-
       this.formSubmitted = true;
     }
     else {
