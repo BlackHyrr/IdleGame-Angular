@@ -1,10 +1,17 @@
 <div class="game-container">
-    <app-main-menu></app-main-menu>
-    <app-header></app-header>
+    <app-character-creation id="characterCreation"/>
+    <app-main-menu />
+    <app-header />
     <main>
         <div class="game-content">
-            <app-aside-menu></app-aside-menu>
-            <app-main-window></app-main-window>
+            <app-aside-menu />
+            <div class="main-window-container">
+                <app-inventory-window></app-inventory-window>
+                <app-skill-window></app-skill-window>
+                <app-region-window></app-region-window>
+                <app-world-window></app-world-window>
+                <app-character-window></app-character-window>
+            </div>
         </div>
     </main>
     <footer>
