@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class MainMenuComponent implements OnInit{
   menuVisible$: Observable<boolean> = this.mainMenuService.menuVisible$;
   @Input() buttonType: string = '';
+  @Input() size: string = '';
 
   handleButtonClick(buttonType: string): void {
     switch (buttonType) {
@@ -19,14 +20,15 @@ export class MainMenuComponent implements OnInit{
       case 'resume':
         this.mainMenuService.toggleMainMenu();
         break
-      // case 'save':
-      //   break;
-      // case 'load':
-      //   break;
-      // case 'options':
-      //   break;
-      // case 'quit':
-      //   break;
+      case 'save':
+        break;
+      case 'load':
+        break;
+      case 'options':
+        break;
+      case 'quit':
+        this.mainMenuService.toggleMainMenu();
+        break;
       default:
         throw new Error(`This button is invalid. Check the buttonType attribute for the components.`)
     }
