@@ -1,4 +1,4 @@
-<tr [id]="resourceCssId">
-    <td>{{ resourceName }}</td>
-    <td>{{ resourceValueCurrent }}/{{ resourceValueMax }}</td>
-</tr>
+<div [id]="resourceCssId" class="player-resource">
+    <p>{{ resourceName }}</p>
+    <p>{{ currentResource }} / {{ maxResource }}</p>
+</div>
