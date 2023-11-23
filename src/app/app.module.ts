@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { PlayerService } from './core/services/player.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    PlayerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
