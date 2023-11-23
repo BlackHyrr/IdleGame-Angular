@@ -3,11 +3,12 @@
     </div>
     <div class="top-bar">
         <div class="player-portrait">
-            <img src="src/assets/images/portrait/HE-WS-KN-M105/Medium.png" alt="">
+            <img src="{{ player?.portraitSmall }}" alt="Portrait of the player">
         </div>
         <app-mainmenu-button
         title="Main menu"
         (buttonClick)="handleMainMenuButtonClick()"
+        width="fit-content"
         />
     </div>
 </header>
