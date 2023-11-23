@@ -1,1 +1,40 @@
-
+<div class="character-creation-menu" *ngIf="(windowStateService.openWindow$ | async) === 'creationMenu'">
+    <div class="inner-container">
+        <form [formGroup]="characterForm">
+            <div class="form-col">
+                <div class="portrait-display">
+                    <img src="{{ portraitLarge }}" alt="">
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-row">
+                    <label for="name">Your name</label>
+                    <input id="name" type="text" formControlName="name">
+                </div>
+                <div class="form-row">
+                    <label for="birthsign">Your birth sign</label>
+                    <select class="custom-select" name="birthsign" id="birthsign" formControlName="birthSign">
+                        <option *ngFor="let birthsign of birthsignsList" value="{{ birthsign }}">{{ birthsign }}</option>
+                    </select>
+                </div>
+    
+                <label for="portraitLarge" hidden>portraitLarge</label>
+                <input id="portraitLarge" type="text" formControlName="portraitLarge" hidden>
+                <label for="portraitSmall" hidden>portraitSmall </label>
+                <input id="portraitSmall" type="text" formControlName="portraitSmall" hidden>
+    
+                <div class="form-row">
+                    <p class="label">Your character portrait</p>
+                    <div class="portrait-grid">
+                        <div class="portrait-card" *ngFor="let portrait of portraits" (click)="selectPortrait(portrait)">
+                            <img src="{{ portrait }}/Small.png" alt="Character portrait">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button type="submit" (click)="onSubmit(); toggleWindow('creationMenu')">Start</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

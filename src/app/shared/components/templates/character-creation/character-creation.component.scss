@@ -1,0 +1,139 @@
+.character-creation-menu {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #CAA782;
+  
+    .inner-container {
+      row-gap: 25px;
+      background-color: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(192, 192, 192, 0.421);
+      padding: 50px;
+      width: fit-content;
+      height: 70%;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      form {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-gap: 50px;
+        height: 100%;
+      }
+    }
+
+    .portrait-display {
+      border: 1px solid #CAA782;
+      width: 450px;
+      height: 600px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .form-col {
+      height: 100%;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .portrait-grid {
+      display: grid;
+      height: 300px;
+      grid-gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      overflow-y: scroll;
+      border: 0.5px solid #CAA782;
+      border-right: 0;
+      padding: 10px;
+      scrollbar-color: #CAA782 rgba(128, 128, 128, 0.227) ;
+      scrollbar-width: thin;
+    }
+
+    .portrait-card {
+      width: 180px;
+      height: 240px;
+      img {
+        width: 100%;
+        height: auto;
+        object-position: center;
+        object-fit: cover;
+        border: 1px solid transparent;
+        cursor: pointer;
+        &:hover {
+          border: 1px solid silver;
+          box-shadow: 0 0 15px rgba(192, 192, 192, 0.655);
+        }
+      }
+    }
+
+    label, p.label {
+      font-size: 1.15rem;
+    }
+
+    input {
+      padding: 10px;
+      border: 0.5px solid #CAA782;
+      border-radius: 0;
+      background-color: transparent;
+      max-width: 150px;
+      &:focus {
+        outline: none;
+        border: 0.5px solid silver;
+        color: silver;
+      }
+    }
+
+    select {
+      padding: 10px;
+      border: 0.5px solid #CAA782;
+      border-radius: 0;
+      background-color: transparent;
+      color: silver;
+      max-width: 150px;
+    }
+
+    option {
+      color: black;
+    }
+
+    button[type=submit] {
+      box-shadow: 0 0 0 3px #CAA782;
+      padding: 8px 80px;
+      border: none;
+      width: fit-content;
+      font-family: 'Crimson Text';
+      font-weight: 500;
+      font-size: 1.7rem;
+      text-align: center;
+      background: radial-gradient(68.97% 68.97% at 50% 50%, #caa78235 0%, rgba(255, 255, 255, 0) 100%);
+
+      color: #CAA782;
+      background-color: transparent;
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 0 0 1px #CAA782;
+        color: white; 
+        background: radial-gradient(68.97% 68.97% at 50% 50%, rgba(247, 247, 247, 0.20) 0%, rgba(255, 255, 255, 0) 100%);
+        cursor: pointer;
+      }
+    }
+}
