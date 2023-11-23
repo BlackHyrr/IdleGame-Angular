@@ -9,7 +9,6 @@ import { PlayerIdentityComponent } from './components/atoms/player-identity/play
 import { ExperienceBarComponent } from './components/atoms/experience-bar/experience-bar.component';
 import { PlayerResourceComponent } from './components/atoms/player-resource/player-resource.component';
 import { MainMenuComponent } from './components/molecules/main-menu/main-menu.component';
-import { MainWindowComponent } from './components/templates/main-window/main-window.component';
 import { InventorySlotComponent } from './components/atoms/inventory-slot/inventory-slot.component';
 import { CharacterCreationComponent } from './components/templates/character-creation/character-creation.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +33,6 @@ import { WindowTitleComponent } from './components/atoms/window-title/window-tit
     ExperienceBarComponent,
     PlayerResourceComponent,
     MainMenuComponent,
-    MainWindowComponent,
     InventorySlotComponent,
     CharacterCreationComponent,
     ToggleVisibilityDirective,
@@ -58,7 +56,6 @@ import { WindowTitleComponent } from './components/atoms/window-title/window-tit
     PlayerIdentityComponent,
     ExperienceBarComponent,
     MainMenuComponent,
-    MainWindowComponent,
     InventorySlotComponent,
     CharacterCreationComponent,
     InventoryWindowComponent,
