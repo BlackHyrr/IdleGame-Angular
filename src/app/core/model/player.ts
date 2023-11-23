@@ -1,17 +1,29 @@
-interface PlayerInterface {
+import { BirthSign, BirthSignStatsInterface } from "./birthSign";
+import { StatisticsInterface } from "./statistics";
+
+export interface PlayerInterface {
     name: string;
-    title: string;
-    portraitSmall: string | null;
-    portraitLarge: string | null;
+    rank: string;
+    portraitSmall: string;
+    portraitLarge: string;
     level: number;
     experience: number;
     titles?: string[];
     stats: StatisticsInterface;
-    inventorySlots: number;
     birthSign: BirthSign; 
 }
 
-const birthSignStatsMap: Record<BirthSign, BirthSignStatsInterface> = {
+export const playerDefaultStats: StatisticsInterface = {
+    'health': 100,
+    'stamina': 100,
+    'mana': 10,
+    'maxHealth': 100,
+    'maxStamina': 100,
+    'maxMana': 10,
+    'inventorySlots': 15
+}
+
+export const birthSignStatsMap: Record<BirthSign, BirthSignStatsInterface> = {
     'Aries': { health: 10, mana: 5, stamina: 8 },
     'Taurus': { health: 15, mana: 3, stamina: 10 },
     'Gemini': { health: 8, mana: 12, stamina: 6 },
@@ -27,19 +39,26 @@ const birthSignStatsMap: Record<BirthSign, BirthSignStatsInterface> = {
 };
 
 export class Player implements PlayerInterface{
-    name: string = '';
-    title: string = '';
-    portraitSmall: string = './assets/images/portrait/HE-WS-KN-M105/Small.png';
-    portraitLarge: string = './assets/images/portrait/HE-WS-KN-M105/Large.png';;
-    level: number = 0;
-    experience: number = 0;
+    name: string;
+    rank: string;
+    portraitSmall: string;
+    portraitLarge: string;
+    level: number;
+    experience: number;
     titles?: string[];
     stats: StatisticsInterface = {} as StatisticsInterface;;
-    inventorySlots: number = 0;
-    birthSign: BirthSign = 'Aries';
+    birthSign: BirthSign;
 
-    constructor() {
-
+    constructor(data: PlayerInterface) {
+        this.name = data.name;
+        this.rank = data.rank;
+        this.portraitSmall = data.portraitSmall || './assets/images/portrait/0011/Small.webp';
+        this.portraitLarge = data.portraitLarge || './assets/images/portrait/0011/Fulllength.webp';
+        this.level = data.level || 1;
+        this.experience = data.experience || 0;
+        this.titles = data.titles || [];
+        this.stats = data.stats || playerDefaultStats;
+        this.birthSign = data.birthSign || 'Aries';
     }
 
 
