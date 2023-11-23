@@ -1,0 +1,9 @@
+<div class="main-menu" [style.display]="(menuVisible$ | async) ? 'flex' : 'none'">
+    <div class="inner-container">
+        <app-mainmenu-button title="Save" buttonType="save" (buttonClick)="handleButtonClick($event)" />
+        <app-mainmenu-button title="Load" buttonType="load" (buttonClick)="handleButtonClick($event)" />
+        <app-mainmenu-button title="Options" buttonType="options" (buttonClick)="handleButtonClick($event)" />
+        <app-mainmenu-button title="Quit" buttonType="quit" (buttonClick)="handleButtonClick($event)" />
+        <app-mainmenu-button title="Resume" buttonType="resume" (buttonClick)="handleButtonClick($event)"/>
+    </div>
+</div>
