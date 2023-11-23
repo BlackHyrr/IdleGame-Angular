@@ -11,11 +11,20 @@
     height: 100%;
     width: 100%;
 
+    @media screen and (max-width: 1440px) {
+        display: block;
+    }
+
     .equipment {
         position: relative;
         background-color: #262626;
         border: 2px solid #685C3C;
         padding: 25px;
+        min-height: 500px;
+
+        @media screen and (max-width: 1440px) {
+            margin-bottom: 25px;
+        }
     }
 
     .inventory {
@@ -28,44 +37,10 @@
     .inventory-grid {
         display: flex;
         flex-wrap: wrap;
-    }
-}
-
-.window-title {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -30%);
-    background-color: #2c2c2c;
-    font-family: 'Crimson Text';
-    font-weight: 400;
-    font-size: 22px;
-    padding: 3px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #CAA782;
-    width: fit-content;
-
-    .inner-container {
-        min-width: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6px 22px;
-        border-style: solid;
-        border-image-slice: 1;
-        border-width: 2px;
-        position: relative;
+        height: 100%;
         overflow: hidden;
-        border-image-source: radial-gradient(#fff, #6E5D4A);
-
-        p {
-            font-family: 'Crimson Text';
-            font-weight: 400;
-            font-size: 22px;
-            text-align: center;
-            color: #CAA782; 
-        }
+        overflow-y: scroll;
+        scrollbar-color: #CAA782 rgba(128, 128, 128, 0.227) ;
+        scrollbar-width: thin;
     }
 }
