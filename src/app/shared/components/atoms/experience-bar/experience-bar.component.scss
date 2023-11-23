@@ -1,0 +1,50 @@
+.experience-bar {
+    position: relative;
+    grid-column: span 2;
+    margin: 5px 0 30px 0;
+    
+    .level {
+        position: absolute;
+        width: 72px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            position: absolute;
+            object-fit: cover;
+            z-index: 0;
+            width: 100%;
+        }
+
+        p {
+            position: relative;
+            z-index: 2;
+        }
+    }
+    
+    .bar-inner-container {
+        border: 0.5px solid #685C3C;
+        background-color: #282828;
+        height: 15px;
+        padding: 4px;
+        margin-left: 63px;
+        width: auto;
+    }
+
+    .inner-bar {
+        background: linear-gradient(180deg, #D3C1A6 0%, #624A27 100%);
+        border-radius: 5px;
+        height: 100%;
+        width: 15%;
+    }
+
+    .bar-infos {
+        display: flex;
+        justify-content: space-between;
+        padding: 3px;
+        margin-left: 68px;
+        font-weight: 500;
+    }
+}
+
