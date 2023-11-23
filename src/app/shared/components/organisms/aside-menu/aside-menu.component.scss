@@ -1,0 +1,30 @@
+.aside-menu {
+    background: rgba(63, 74, 98, 0.95);
+    border: 2px solid #685C3C;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .player-infos {
+        color: white;
+    }
+
+    .fence {
+        margin: 15px 0;
+        max-width: 100%;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .credit {
+        margin-top: auto;
+        padding: 10px;
+        text-align: center;
+        a {
+            color: #C89C5B;
+        }
+    }
+}
