@@ -1,0 +1,23 @@
+.btn-nav {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 100%;
+    margin-bottom: 5px;
+    background: radial-gradient(68.97% 68.97% at 50% 50%, rgba(247, 247, 247, 0.11) 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 10px 0;
+    text-align: center;
+
+    border-style: solid;
+    border-image-slice: 1;
+    border-width: 2px 0;
+    position: relative;
+    overflow: hidden;
+    border-image-source: linear-gradient(90deg, rgba(143, 0, 255, 0) 0%, #685C3C 50%, rgba(143, 0, 255, 0) 100%);
+
+    &:hover {
+        background: radial-gradient(68.97% 68.97% at 50% 50%, rgba(247, 247, 247, 0.20) 0%, rgba(255, 255, 255, 0) 100%);
+        cursor: pointer;
+        color: #C89C5B;
+    }
+}
