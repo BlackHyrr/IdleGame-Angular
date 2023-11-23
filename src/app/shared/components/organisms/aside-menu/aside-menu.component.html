@@ -4,15 +4,15 @@
         <app-experience-bar></app-experience-bar>
     </div>
     <app-player-vitals></app-player-vitals>
-    <img class="fence" src="./assets/images/brown-separator.png" alt="">
+    <img class="fence" src="./assets/images/brown-separator.png" alt="Decorative bar to separated sections">
     <div class="nav-menu">
-        <app-side-bar-button [buttonTitle]="'Character'"></app-side-bar-button>
-        <app-side-bar-button [buttonTitle]="'Inventory'"></app-side-bar-button>
-        <app-side-bar-button [buttonTitle]="'Skills'"></app-side-bar-button>
-        <app-side-bar-button [buttonTitle]="'Region'"></app-side-bar-button>
-        <app-side-bar-button [buttonTitle]="'World Map'"></app-side-bar-button>
+        <app-side-bar-button [buttonTitle]="'Character'" (click)="toggleWindow('character')"></app-side-bar-button>
+        <app-side-bar-button [buttonTitle]="'Inventory'" (click)="toggleWindow('inventory')"></app-side-bar-button>
+        <app-side-bar-button [buttonTitle]="'Skills'" (click)="toggleWindow('skill')"></app-side-bar-button>
+        <app-side-bar-button [buttonTitle]="'Region'" (click)="toggleWindow('region')"></app-side-bar-button>
+        <app-side-bar-button [buttonTitle]="'World Map'" (click)="toggleWindow('world')"></app-side-bar-button>
     </div>
-    <img class="fence" src="./assets/images/brown-separator.png" alt="">
+    <img class="fence" src="./assets/images/brown-separator.png" alt="Decorative bar to separated sections">
     <div class="credit">
         <a href="https://www.freepik.com/icon/armor_6010434">Icon by Freepik</a>
     </div>
