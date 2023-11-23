@@ -1,0 +1,19 @@
+.player-identity {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    #player-name {
+        text-align: left;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: 'Crimson Text';
+    }
+    #player-title {
+        text-align: right;
+        color: #C89C5B;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+}
+
