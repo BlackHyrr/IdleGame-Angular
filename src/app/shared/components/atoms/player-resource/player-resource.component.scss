@@ -1,0 +1,40 @@
+tr {
+    width: 100%;
+    td:first-child {
+        background: linear-gradient(180deg, #C89C5B 30%, #EAEAEA 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    td:last-child {
+        text-align: right;
+    }
+
+    td {
+        padding: 4px 15px;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+}
+
+#health-vital {
+    td:last-child {
+        color: #BB1A1A;
+    }
+}
+
+#mana-vital {
+    td:last-child {
+        color: #2898FF;
+    }
+}
+
+#stamina-vital {
+    td:last-child {
+        color: #19902B;
+    }
+}
