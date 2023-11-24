@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, Output, HostBinding } from '@angular/co
 })
 export class MainMenuButtonComponent {
   @Input() title: string = '';
-  @Input() customStyle: { [key: string]: string } = {};
   @Input() buttonType: string = '';
   @Output() buttonClick = new EventEmitter<string>();
   @Input() width: string = 'fit-content';
@@ -21,9 +20,5 @@ export class MainMenuButtonComponent {
   }
 
   constructor() {
-  }
-
-  get buttonStyle(): { [key: string]: string } {
-    return this.customStyle;
   }
 }
