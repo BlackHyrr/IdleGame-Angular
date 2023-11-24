@@ -10,4 +10,37 @@
     position: relative;
     overflow: hidden;
     border-image-source: linear-gradient(90deg, #6E5D4A 0%, rgb(169, 169, 169, 0.35) 100%);  
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+        border: 0.5px solid transparent;
+        padding: 3px;
+        &:hover {
+             cursor: pointer;
+             border: 0.5px solid rgba(192, 192, 192, 0.504);
+        }
+    }
+
+    .common {
+        background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(grey, 0.28) 0%, rgba(217, 217, 217, 0) 100%);
+    }
+
+    .magic {
+        background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(7, 81, 255, 0.53) 0%, rgba(217, 217, 217, 0) 100%);
+    }
+
+    .rare {
+        background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(255, 182, 0, 0.53) 0%, rgba(217, 217, 217, 0) 100%);
+    }
+
+    .epic {
+        background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(255, 0, 255, 0.65) 0%, rgba(217, 217, 217, 0) 100%);
+    }
+
+    .legendary {
+        background: radial-gradient(67.78% 67.78% at 50% 50%, rgba(251, 141, 0, 0.96) 0%, rgba(217, 217, 217, 0) 100%)
+    }
 }
