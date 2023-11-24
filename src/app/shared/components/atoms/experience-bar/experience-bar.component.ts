@@ -11,6 +11,7 @@ import { Player } from '../../../../core/model/player';
 export class ExperienceBarComponent {
   player: Player | null = null;
   private playerSubscription: Subscription | undefined;
+  width: string = "";
 
   constructor(private playerService: PlayerService) {
   }
@@ -23,5 +24,10 @@ export class ExperienceBarComponent {
 
   ngOnDestroy(): void {
     this.playerSubscription?.unsubscribe();
+  }
+
+  calculateExperienceBarWidth() {
+    let percent = ((this.player?.currentLevelProgress || 0) / (this.player?.currentExperienceNeeded || 0)) * 100
+    return {'width': `${percent}%`};
   }
 }
