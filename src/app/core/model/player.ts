@@ -55,7 +55,7 @@ export class Player implements PlayerInterface {
         this.portraitSmall = data.portraitSmall || './assets/images/portrait/0011/Small.webp';
         this.portraitLarge = data.portraitLarge || './assets/images/portrait/0011/Fulllength.webp';
         this.level = data.level || 1;
-        this.experience = data.experience || 100;
+        this.experience = data.experience || 3000;
         this.titles = data.titles || [];
         this.stats = data.stats || playerDefaultStats;
         this.birthSign = data.birthSign || 'Aries';
@@ -79,7 +79,11 @@ export class Player implements PlayerInterface {
     experienceModifier: number = 0.07;
 
     get currentLevel(): number {
-        return this.convertXpToLevel(this.experience);
+        return this.convertXpToLevel(this.currentXp);
+    }
+
+    get currentXp(): number {
+        return this.experience;
     }
 
     get currentLevelProgress(): number {
@@ -95,21 +99,18 @@ export class Player implements PlayerInterface {
     }
 
     private convertXpToLevel(experience: number): number {
-        return Math.sqrt(experience) * this.experienceModifier;
+        return Math.floor(Math.sqrt(experience) * this.experienceModifier) ;
     }
 
     private calculateLevelProgress(): number {
-        let currentXp: number = this.experience;
-        let currentLevelXP: number = this.convertLevelToXp(this.currentLevel);
-        let nextLevelXp: number = this.convertLevelToXp(this.currentLevel + 1);
-
-        let earnedXp = nextLevelXp - currentXp;
-        return earnedXp;
+        let currentXp: number = this.currentXp;
+        let currentLevelXp: number = this.convertLevelToXp(this.currentLevel);
+        return currentXp - currentLevelXp;
     }
 
     private calculateExperienceNeeded(): number {
-        let currentLevelXP = this.convertLevelToXp(this.currentLevel);
-        let nextLevelXp = this.convertLevelToXp(this.currentLevel + 1);
+        let currentLevelXP: number = this.convertLevelToXp(this.currentLevel);
+        let nextLevelXp: number = this.convertLevelToXp(this.currentLevel + 1);
         return nextLevelXp - currentLevelXP;
     }
 }
