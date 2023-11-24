@@ -1,1 +1,3 @@
-<div class="inventory-slot"></div>
+<div class="inventory-slot">
+    <img *ngIf="( item?.image )" src="{{ item?.image }}" alt="" [ngClass]="item?.rarity">
+</div>
