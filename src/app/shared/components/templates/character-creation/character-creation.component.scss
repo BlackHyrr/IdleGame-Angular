@@ -19,8 +19,7 @@
       border: 1px solid rgba(192, 192, 192, 0.421);
       padding: 50px;
       width: fit-content;
-      height: 70%;
-      width: fit-content;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -36,8 +35,9 @@
 
     .portrait-display {
       border: 1px solid #CAA782;
+      height: 100%;
       width: 450px;
-      height: 600px;
+      aspect-ratio: 3 / 4;
       img {
         height: 100%;
         width: 100%;
@@ -48,6 +48,8 @@
 
     .form-col {
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .form-row {
@@ -55,6 +57,10 @@
       flex-direction: column;
       gap: 10px;
       margin-bottom: 25px;
+      &:last-child {
+        margin-top: auto;
+        margin-bottom: 0;
+      }
     }
 
     .portrait-grid {
@@ -127,7 +133,6 @@
       font-size: 1.7rem;
       text-align: center;
       background: radial-gradient(68.97% 68.97% at 50% 50%, #caa78235 0%, rgba(255, 255, 255, 0) 100%);
-
       color: #CAA782;
       background-color: transparent;
       transition: 0.3s;
@@ -137,5 +142,13 @@
         background: radial-gradient(68.97% 68.97% at 50% 50%, rgba(247, 247, 247, 0.20) 0%, rgba(255, 255, 255, 0) 100%);
         cursor: pointer;
       }
+    }
+
+    .error-message {
+      color: rgb(222, 0, 0);
+    }
+
+    .invalid-input {
+      border-color: rgb(222, 0, 0) !important;
     }
 }
