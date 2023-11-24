@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Item } from '../../../../core/model/item';
 
 @Component({
   selector: 'app-inventory-slot',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './inventory-slot.component.scss'
 })
 export class InventorySlotComponent {
-
+  @Input() item: Item | null = null;
 }
