@@ -9,13 +9,38 @@
             <div class="form-col">
                 <div class="form-row">
                     <label for="name">Your name</label>
-                    <input id="name" type="text" formControlName="name">
+                    <input 
+                    id="name" 
+                    type="text" 
+                    formControlName="name" 
+                    autocomplete="off" 
+                    [ngClass]="{'invalid-input': characterForm.get('name')?.invalid && (characterForm.get('name')?.dirty || characterForm.get('name')?.touched)}">
+                    <div *ngIf="characterForm.controls['name'].invalid && (characterForm.controls['name'].dirty || characterForm.controls['name'].touched)"
+                        class="alert"
+                        >
+                        <div *ngIf="characterForm.get('name')?.errors && characterForm.get('name')?.hasError('required')" class="error-message">
+                            Please enter username
+                        </div>
+                        <div *ngIf="characterForm.get('name')?.errors && characterForm.get('name')?.hasError('minlength')" class="error-message">
+                            Your name must have at least 3 characters
+                        </div>
+                        <div *ngIf="characterForm.get('name')?.errors && characterForm.get('name')?.hasError('maxlength')" class="error-message">
+                            Your name must have at most 25 characters
+                        </div>
+                    </div>
                 </div>
                 <div class="form-row">
                     <label for="birthsign">Your birth sign</label>
                     <select class="custom-select" name="birthsign" id="birthsign" formControlName="birthSign">
                         <option *ngFor="let birthsign of birthsignsList" value="{{ birthsign }}">{{ birthsign }}</option>
                     </select>
+                    <div *ngIf="characterForm.controls['birthSign'].invalid && (characterForm.controls['birthSign'].dirty || characterForm.controls['birthSign'].touched)"
+                        class="alert"
+                        >
+                        <div *ngIf="characterForm.get('birthSign')?.errors && characterForm.get('birthSign')?.hasError('required')" class="error-message">
+                            Please choose a birth sign
+                        </div>
+                    </div>
                 </div>
     
                 <label for="portraitLarge" hidden>portraitLarge</label>
@@ -25,6 +50,13 @@
     
                 <div class="form-row">
                     <p class="label">Your character portrait</p>
+                    <div *ngIf="characterForm.controls['portraitSmall'].invalid && (characterForm.controls['portraitSmall'].dirty || characterForm.controls['portraitSmall'].touched)"
+                        class="alert">
+                        <div *ngIf="characterForm.get('portraitSmall')?.errors && characterForm.get('portraitSmall')?.hasError('required')"
+                            class="error-message">
+                            Please choose a portrait
+                        </div>
+                    </div>
                     <div class="portrait-grid">
                         <div class="portrait-card" *ngFor="let portrait of portraits" (click)="selectPortrait(portrait)">
                             <img src="{{ portrait }}/Small.webp" alt="Character portrait">
