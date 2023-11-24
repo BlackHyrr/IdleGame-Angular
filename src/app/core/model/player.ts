@@ -10,7 +10,7 @@ export interface PlayerInterface {
     experience: number;
     titles?: string[];
     stats: StatisticsInterface;
-    birthSign: BirthSign; 
+    birthSign: BirthSign;
 }
 
 export const playerDefaultStats: StatisticsInterface = {
@@ -24,21 +24,21 @@ export const playerDefaultStats: StatisticsInterface = {
 }
 
 export const birthSignStatsMap: Record<BirthSign, BirthSignStatsInterface> = {
-    'Aries': { health: 10, mana: 5, stamina: 8 },
-    'Taurus': { health: 15, mana: 3, stamina: 10 },
-    'Gemini': { health: 8, mana: 12, stamina: 6 },
-    'Cancer': { health: 12, mana: 8, stamina: 7 },
-    'Leo': { health: 14, mana: 6, stamina: 12 },
-    'Virgo': { health: 10, mana: 10, stamina: 9 },
-    'Libra': { health: 9, mana: 9, stamina: 11 },
-    'Scorpio': { health: 11, mana: 7, stamina: 14 },
-    'Sagittarius': { health: 13, mana: 4, stamina: 13 },
-    'Capricorn': { health: 16, mana: 2, stamina: 15 },
-    'Aquarius': { health: 6, mana: 14, stamina: 5 },
-    'Pisces': { health: 7, mana: 11, stamina: 4 },
+    'Aries': { maxHealth: 10, maxMana: 5, maxStamina: 8 },
+    'Taurus': { maxHealth: 15, maxMana: 3, maxStamina: 10 },
+    'Gemini': { maxHealth: 8, maxMana: 12, maxStamina: 6 },
+    'Cancer': { maxHealth: 12, maxMana: 8, maxStamina: 7 },
+    'Leo': { maxHealth: 14, maxMana: 6, maxStamina: 12 },
+    'Virgo': { maxHealth: 10, maxMana: 10, maxStamina: 9 },
+    'Libra': { maxHealth: 9, maxMana: 9, maxStamina: 11 },
+    'Scorpio': { maxHealth: 11, maxMana: 7, maxStamina: 14 },
+    'Sagittarius': { maxHealth: 13, maxMana: 4, maxStamina: 13 },
+    'Capricorn': { maxHealth: 16, maxMana: 2, maxStamina: 15 },
+    'Aquarius': { maxHealth: 6, maxMana: 14, maxStamina: 5 },
+    'Pisces': { maxHealth: 7, maxMana: 11, maxStamina: 4 },
 };
 
-export class Player implements PlayerInterface{
+export class Player implements PlayerInterface {
     name: string;
     rank: string;
     portraitSmall: string;
@@ -55,7 +55,7 @@ export class Player implements PlayerInterface{
         this.portraitSmall = data.portraitSmall || './assets/images/portrait/0011/Small.webp';
         this.portraitLarge = data.portraitLarge || './assets/images/portrait/0011/Fulllength.webp';
         this.level = data.level || 1;
-        this.experience = data.experience || 0;
+        this.experience = data.experience || 100;
         this.titles = data.titles || [];
         this.stats = data.stats || playerDefaultStats;
         this.birthSign = data.birthSign || 'Aries';
@@ -66,10 +66,50 @@ export class Player implements PlayerInterface{
     updateStatsBasedOnBirthSign(): void {
         const birthSignStats: BirthSignStatsInterface = birthSignStatsMap[this.birthSign];
 
-        if(birthSignStats) {
-            this.stats.health += birthSignStats.health ?? 0;
-            this.stats.mana += birthSignStats.mana ?? 0;
-            this.stats.stamina += birthSignStats.stamina ?? 0;
+        if (birthSignStats) {
+            this.stats.health += birthSignStats.maxHealth ?? 0;
+            this.stats.mana += birthSignStats.maxMana ?? 0;
+            this.stats.stamina += birthSignStats.maxStamina ?? 0;
+            this.stats.maxHealth += birthSignStats.maxHealth ?? 0;
+            this.stats.maxMana += birthSignStats.maxMana ?? 0;
+            this.stats.maxStamina += birthSignStats.maxStamina ?? 0;
         }
+    }
+
+    experienceModifier: number = 0.07;
+
+    get currentLevel(): number {
+        return this.convertXpToLevel(this.experience);
+    }
+
+    get currentLevelProgress(): number {
+        return this.calculateLevelProgress();
+    }
+
+    get currentExperienceNeeded(): number {
+        return this.calculateExperienceNeeded();
+    }
+
+    private convertLevelToXp(level: number): number {
+        return Math.pow(level / this.experienceModifier, 2);
+    }
+
+    private convertXpToLevel(experience: number): number {
+        return Math.sqrt(experience) * this.experienceModifier;
+    }
+
+    private calculateLevelProgress(): number {
+        let currentXp: number = this.experience;
+        let currentLevelXP: number = this.convertLevelToXp(this.currentLevel);
+        let nextLevelXp: number = this.convertLevelToXp(this.currentLevel + 1);
+
+        let earnedXp = nextLevelXp - currentXp;
+        return earnedXp;
+    }
+
+    private calculateExperienceNeeded(): number {
+        let currentLevelXP = this.convertLevelToXp(this.currentLevel);
+        let nextLevelXp = this.convertLevelToXp(this.currentLevel + 1);
+        return nextLevelXp - currentLevelXP;
     }
 }
