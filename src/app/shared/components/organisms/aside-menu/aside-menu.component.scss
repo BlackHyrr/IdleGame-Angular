@@ -20,11 +20,26 @@
     }
 
     .credit {
+        position: relative;
         margin-top: auto;
         padding: 10px;
         text-align: center;
         a {
             color: #C89C5B;
+        }
+
+        .clock {
+            padding: 4px 18px;
+            position: absolute;
+            border: 1px solid silver;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            color: silver;
+
+            p {
+                font-weight: 600;
+            }
         }
     }
 }
