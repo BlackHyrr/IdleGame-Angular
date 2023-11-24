@@ -1,17 +1,16 @@
 <div class="experience-bar">
     <div class="level">
         <img src="./assets/images/level-container.png" alt="">
-        <p>{{ player?.level }}</p>
+        <p>{{ player?.currentLevel | number:'1.0-0' }}</p>
     </div>
     <div class="bar-container">
         <div class="bar-inner-container">
-            <div class="inner-bar">
-
+            <div class="inner-bar" [ngStyle]="calculateExperienceBarWidth()">
             </div>
         </div>
         <div class="bar-infos">
             <p>Experience</p>
-            <p id="experience">{{ player?.experience }}</p>
+            <p id="experience">{{ player?.currentLevelProgress | number:'1.0-0' }}/{{ player?.currentExperienceNeeded | number:'1.0-0' }}</p>
         </div>
     </div>
 </div>
