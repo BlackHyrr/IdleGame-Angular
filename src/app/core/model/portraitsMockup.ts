@@ -9,5 +9,11 @@ export const portraits: string[] = [
     "./assets/images/portrait/0008",
     "./assets/images/portrait/0009",
     "./assets/images/portrait/0010",
-    "./assets/images/portrait/0011"
+    "./assets/images/portrait/0011",
+    "./assets/images/portrait/0012",
+    "./assets/images/portrait/0013",
+    "./assets/images/portrait/0014",
+    "./assets/images/portrait/0015",
+    "./assets/images/portrait/0016",
+    "./assets/images/portrait/0017"
 ]
