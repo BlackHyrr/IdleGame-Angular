@@ -41,9 +41,9 @@ export class CharacterCreationComponent implements OnInit {
   }
 
   selectPortrait(portrait: string): void {
-    this.characterForm.get('portraitLarge')?.setValue(`${portrait}/Fulllength.webp`);
-    this.characterForm.get('portraitSmall')?.setValue(`${portrait}/Small.webp`);
-    this.portraitLarge = `${portrait}/Fulllength.webp` || '';
+    this.characterForm.get('portraitLarge')?.setValue(`${portrait}/Fulllength.png`);
+    this.characterForm.get('portraitSmall')?.setValue(`${portrait}/Small.png`);
+    this.portraitLarge = `${portrait}/Fulllength.png` || '';
   }
 
   toggleWindow(windowId: string): void {
