@@ -1,3 +1,10 @@
-# IdleGameAngular
+<p align="center">
+  <img src="https://github.com/BlackHyrr/IdleGame-Angular/src/assets/images/github/logo.png" alt="Logo for IdleGame-Angular"/>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+
+<p align="center">
+  <strong>Welcome. This idle game represents a student project developed using Angular, serving as both a discovery and a self-training endeavor within this framework.</strong>
+
+  <img width="704" alt="Game screenshot" src="https://github.com/BlackHyrr/IdleGame-Angular/src/assets/images/github/create-character.png">
+</p>
