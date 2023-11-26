@@ -28,7 +28,7 @@ This project contains assets from multiple sources.
 Items:
 - [Accessories and armors](https://clockworkraven.itch.io/free-rpg-icon-pack-100-accessories-and-armor-clockwork-raven-studios) by Clockwork Raven Studios
 - [Weapons and potions](https://clockworkraven.itch.io/free-rpg-icon-pack-100-weapons-and-po-clockwork-raven-studios) by Clockwork Raven Studios
-- [Gold coin](<a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon</a>) by Freepik
+- <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Freepik - Flaticon</a> by Freepik
 
 Some of the characters portraits were made using AI [Nightcafe Studio](https://creator.nightcafe.studio) (style: Artistic portrait, model: SDXL 1.0)
 Since I needed two images, one full body and one for showing only the character face, I used [Portramatic - Portrait Generator and Library](https://www.nexusmods.com/pathfinderkingmaker/mods/247) by halgari [github](https://github.com/wabbajack-tools/portramatic).
