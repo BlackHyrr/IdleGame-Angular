@@ -67,7 +67,7 @@ export class ItemService {
     }
 
     private getRandomRarity(level: number): string {
-        const rarityProbabilities: { [key: string]: number } = {
+/*         const rarityProbabilities: { [key: string]: number } = {
             common: 0.2,
             magic: 0.3,
             rare: 0.25,
@@ -75,6 +75,16 @@ export class ItemService {
             legendary: 0.08,
             mythical: 0.02,
             divine: 0.005,
+        }; */
+
+        const rarityProbabilities: { [key: string]: number } = {
+            common: 0.1,
+            magic: 0.3,
+            rare: 0.15,
+            epic: 0.15,
+            legendary: 0.18,
+            mythical: 0.12,
+            divine: 0.055,
         };
     
         const totalProbability = Object.values(rarityProbabilities).reduce((sum, probability) => sum + probability, 0);
