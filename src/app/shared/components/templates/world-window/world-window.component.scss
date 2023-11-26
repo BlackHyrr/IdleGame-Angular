@@ -4,7 +4,25 @@
     left: 0;
     background: rgba(63, 74, 98, 0.95);
     border: 2px solid #685C3C;
-    padding: 25px;
+    padding: 35px;
     height: 100%;
     width: 100%;
+
+    .inner-window {
+        height: 100%;
+        width: 100%;
+        background-color: #262626;
+        border: 2px solid #685C3C;
+        padding: 10px;
+        position: relative;
+        overflow-y: scroll;
+        scrollbar-color: #CAA782 rgba(128, 128, 128, 0.227) ;
+        scrollbar-width: thin;
+
+        img {
+            width: 100%;
+            height: 100%;
+            /* object-fit: contain; */
+        }
+    }
 }
