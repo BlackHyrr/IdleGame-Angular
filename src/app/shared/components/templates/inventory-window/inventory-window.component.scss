@@ -37,9 +37,13 @@
     .inventory-grid {
         display: flex;
         flex-wrap: wrap;
+        padding: 10px;
+        height: 100%;
         overflow: hidden;
         overflow-y: scroll;
         scrollbar-color: #CAA782 rgba(128, 128, 128, 0.227) ;
         scrollbar-width: thin;
+        align-items: start;
+        align-content: flex-start;
     }
 }
