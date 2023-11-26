@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/BlackHyrr/IdleGame-Angular/src/assets/images/github/logo.png" alt="Logo for IdleGame-Angular"/>
+  <img src="https://github.com/BlackHyrr/IdleGame-Angular/blob/dev/src/assets/images/github/logo.png" alt="Logo for IdleGame-Angular"/>
 </p>
 
 
 <p align="center">
   <strong>Welcome. This idle game represents a student project developed using Angular, serving as both a discovery and a self-training endeavor within this framework.</strong>
 
-  <img width="704" alt="Game screenshot" src="https://github.com/BlackHyrr/IdleGame-Angular/src/assets/images/github/create-character.png">
+  <img width="704" alt="Game screenshot" src="https://github.com/BlackHyrr/IdleGame-Angular/blob/dev/src/assets/images/github/create-character.png">
 </p>
