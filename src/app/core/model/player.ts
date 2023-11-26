@@ -52,8 +52,8 @@ export class Player implements PlayerInterface {
     constructor(data: PlayerInterface) {
         this.name = data.name;
         this.rank = data.rank;
-        this.portraitSmall = data.portraitSmall || './assets/images/portrait/0011/Small.webp';
-        this.portraitLarge = data.portraitLarge || './assets/images/portrait/0011/Fulllength.webp';
+        this.portraitSmall = data.portraitSmall || './assets/images/portrait/0011/Small.png';
+        this.portraitLarge = data.portraitLarge || './assets/images/portrait/0011/Fulllength.png';
         this.level = data.level || 1;
         this.experience = data.experience || 3000;
         this.titles = data.titles || [];
