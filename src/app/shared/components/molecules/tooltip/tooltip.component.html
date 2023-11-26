@@ -1,0 +1,15 @@
+<div class="tooltip">
+    <div class="inner-tooltip">
+        <p class="item-name" [ngClass]="item?.rarity + '-text'">{{ item?.name }}</p>
+        <p class="item-level">Lvl {{ item?.level }}</p>
+        <p class="item-rarity">{{ item?.rarity }}</p>
+        <p class="item-desc">{{ item?.description }}</p>
+        <div class="item-stats">
+            <div *ngFor="let modifier of item?.modifiers">
+                <span class="modifier-value">{{ '+' + modifier.value  + (modifier.modifier.type.includes('Modifier') ? '%' : '')}}</span>
+                <span>{{' to ' +  modifier.modifier.name}}</span>
+            </div>
+        </div>
+        <p class="item-price">Value: {{ item?.price }} <img src="./assets/images/items/others/coin.png" alt="Icon of a gold coin"></p>
+    </div>
+</div>

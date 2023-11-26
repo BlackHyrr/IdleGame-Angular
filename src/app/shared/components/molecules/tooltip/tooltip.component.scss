@@ -1,0 +1,103 @@
+.tooltip {
+    position: absolute;
+    box-shadow: 0 0 0 3px rgb(26, 17, 17);
+    background: linear-gradient(180deg, #b89035 -20%, #362a20 80%);
+    transform: translateX(-50%), translateY(-50%);
+    z-index: 100000;
+    padding: 2px;
+    min-height: 420px;
+    min-width: 340px;
+    border: 0.1px solid rgba(192, 192, 192, 0.303);
+    height: 100%;
+
+    .inner-tooltip {
+        color: white;
+        padding: 10px;
+        padding-bottom: 30px;
+        background: linear-gradient(180deg, #64260b -50%, #171311d4 50%);
+        height: 100%;
+        position: relative;
+    }
+
+    .item-name {
+        padding-right: 60px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        -webkit-text-stroke-width: 0.2px; 
+        -webkit-text-stroke-color: black; 
+    }
+
+    .item-level {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.15rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        color: #CAA782;
+    }
+
+    .item-price {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        img {
+            width: 10px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    .item-rarity {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        color: #CAA782;
+    }
+
+    .item-desc {
+        padding: 10px 0;
+        font-size: 0.75rem;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 300;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        color: rgb(215, 215, 215);
+    }
+
+    .modifier-value {
+        color: rgb(45, 179, 45);
+    }
+
+    .common-text {
+        color: rgba(grey, 1);
+    }
+
+    .magic-text {
+        color: rgba(7, 139, 255, 1);
+    }
+
+    .rare-text {
+        color: rgba(255, 182, 0, 1);
+    }
+
+    .epic-text {
+        color:  rgba(255, 0, 255, 1);
+    }
+
+    .legendary-text {
+        color: rgba(251, 141, 0, 1);
+    }
+
+    .mythical-text {
+        color: rgb(235, 1, 1);
+    }
+
+    .divine-text {
+        color: rgb(0, 225, 255);
+    }
+}
