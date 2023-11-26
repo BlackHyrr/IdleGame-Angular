@@ -19,6 +19,8 @@ import { WorldWindowComponent } from './components/templates/world-window/world-
 import { RegionWindowComponent } from './components/templates/region-window/region-window.component';
 import { CharacterWindowComponent } from './components/templates/character-window/character-window.component';
 import { WindowTitleComponent } from './components/atoms/window-title/window-title.component';
+import { TooltipComponent } from './components/molecules/tooltip/tooltip.component';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 
 
@@ -41,7 +43,9 @@ import { WindowTitleComponent } from './components/atoms/window-title/window-tit
     WorldWindowComponent,
     RegionWindowComponent,
     CharacterWindowComponent,
-    WindowTitleComponent
+    WindowTitleComponent,
+    TooltipComponent,
+    TooltipDirective
   ],
   imports: [
     CommonModule,
