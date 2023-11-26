@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <label for="birthsign">Your birth sign</label>
+                    <label for="birthsign">Your birthsign</label>
                     <select class="custom-select" name="birthsign" id="birthsign" formControlName="birthSign">
                         <option *ngFor="let birthsign of birthsignsList" value="{{ birthsign }}">{{ birthsign }}</option>
                     </select>
@@ -38,7 +38,7 @@
                         class="alert"
                         >
                         <div *ngIf="characterForm.get('birthSign')?.errors && characterForm.get('birthSign')?.hasError('required')" class="error-message">
-                            Please choose a birth sign
+                            Please choose a birthsign
                         </div>
                     </div>
                 </div>
