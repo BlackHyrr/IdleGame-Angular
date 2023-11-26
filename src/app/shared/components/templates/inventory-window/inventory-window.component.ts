@@ -4,6 +4,7 @@ import { PlayerService } from '../../../../core/services/player.service';
 import { Subscription } from 'rxjs';
 import { Player } from '../../../../core/model/player';
 import { Item } from '../../../../core/model/item';
+import { ItemService } from '../../../../core/services/item.service';
 
 @Component({
   selector: 'app-inventory-window',
@@ -13,7 +14,7 @@ import { Item } from '../../../../core/model/item';
 export class InventoryWindowComponent {
   @Input() public inventorySlots: (Item | null)[] = [];
 
-  constructor(private playerService: PlayerService, protected windowStateService: WindowStateService) {
+  constructor(private playerService: PlayerService, protected windowStateService: WindowStateService, private itemService: ItemService) {
   }
 
   player: Player | null = null;
@@ -22,17 +23,24 @@ export class InventoryWindowComponent {
   ngOnInit(): void {
     this.playerSubscription = this.playerService.player$.subscribe(player => {
       this.player = player;
-
-      if(this.player) {
+      
+      if (this.player) {
         this.initializeInventorySlots();
-        let newItem = new Item('test2', 'testdesc', './assets/images/items/tile000.png', 'rare', 400, {});
-        this.addItemToInventory(newItem);
-        let newItem2 = new Item('test2', 'testdesc', './assets/images/items/tile001.png', 'epic', 400, {});
-        this.addItemToInventory(newItem2);
-        let newItem3 = new Item('test3', 'testdesc', './assets/images/items/tile011.png', 'legendary', 400, {});
-        this.addItemToInventory(newItem3);
-        let newItem4 = new Item('test4', 'testdesc', './assets/images/items/tile024.png', 'magic', 400, {});
-        this.addItemToInventory(newItem4);
+        this.itemService.generateItem(8, 'weapon').subscribe(newItem1 => {
+          this.addItemToInventory(newItem1);
+        });
+        this.itemService.generateItem(63, 'armor').subscribe(newItem2 => {
+          this.addItemToInventory(newItem2);
+        });
+        this.itemService.generateItem(28, 'weapon').subscribe(newItem3 => {
+          this.addItemToInventory(newItem3);
+        });
+        this.itemService.generateItem(36, 'armor').subscribe(newItem4 => {
+          this.addItemToInventory(newItem4);
+        });
+        this.itemService.generateItem(80, 'weapon').subscribe(newItem5 => {
+          this.addItemToInventory(newItem5);
+        });
       }
     });
   }
@@ -41,6 +49,7 @@ export class InventoryWindowComponent {
     if(this.player) {
       this.inventorySlots = Array(this.player.stats.inventorySlots).fill(null);
     }
+
   }
 
   addItemToInventory(item: Item): void {
