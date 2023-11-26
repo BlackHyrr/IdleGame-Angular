@@ -1,45 +1,50 @@
-export interface ItemModifierInterface {
-    maxHealth?: number;
-    maxMana?: number;
-    maxStamina?: number;
-    healthmodifier?: number;
-    manaModifier?: number;
-    staminaModifier?: number;
-}
+import { ItemModifier } from "./modifiers";
+
+export type ItemType = 'weapon' | 'armor';
 
 export interface ItemInterface {
     id: number;
+    type: ItemType;
     name: string;
+    level: number;
     description?: string;
     image: string;
     price: number;
-    stats?: ItemModifierInterface;
+    modifiers?: ItemModifier[];
 }
 
-let nextItemId = 1;
+/* type Rarity = 'common' | 'magic' | 'rare' | 'epic' | 'legendary' | 'mythical' | 'divine'; */
 
-type Rarity = 'common' | 'magic' | 'rare' | 'epic' | 'legendary' | 'mythic' | 'divine';
+export enum Rarity {
+    Common = 'common',
+    Magic = 'magic',
+    Rare = 'rare',
+    Epic = 'epic',
+    Legendary = 'legendary',
+    Mythical = 'mythical',
+    Divine = 'divine'
+}
 
 export class Item implements ItemInterface {
     id: number;
+    type: ItemType;
     name: string;
+    level: number;
     description?: string;
     image: string;
     rarity: Rarity;
     price: number;
-    stats?: ItemModifierInterface;
+    modifiers?: ItemModifier[];
 
-    constructor(name: string, description: string, image: string, rarity: Rarity, price: number, stats: ItemModifierInterface) {
-        this.id = this.generateUniqueId();
+    constructor(id: number, type: ItemType, name: string, level: number, description: string, image: string, rarity: Rarity, price: number, modifiers: ItemModifier[]) {
+        this.id = id;
+        this.type = type;
         this.name = name;
+        this.level = level || 0;
         this.description = description;
         this.image = image || './assets/images/items/tile000.png';
         this.rarity = rarity;
         this.price = price;
-        this.stats = stats;
-    }
-
-    private generateUniqueId():number {
-        return nextItemId++;
+        this.modifiers = modifiers;
     }
 }
